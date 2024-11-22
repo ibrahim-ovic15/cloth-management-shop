@@ -1,0 +1,120 @@
+  
+  /* Container Styling */
+  .login-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Top Heading */
+  .shop-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Main Login Section */
+  .login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Left Side - Logo */
+  .logo-container {
+    flex: 1;
+  }
+  
+  .shop-logo {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  /* Right Side - Login Box */
+  .login-box {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .login-heading {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  /* Form Styling */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .form-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .colorful-input {
+    background: linear-gradient(90deg, #ffe7ba, #ffcfdf);
+  }
+  
+  /* Options */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+  
+  .forgot-password {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Buttons */
+  .login-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Signup Option */
+  .signup-option {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .signup-option a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signup-option a:hover {
+    text-decoration: underline;
+  }
+  

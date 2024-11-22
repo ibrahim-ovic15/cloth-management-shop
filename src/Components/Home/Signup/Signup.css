@@ -1,0 +1,77 @@
+  /* Container Styling */
+  .signup-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Top Heading */
+  .shop-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Main Signup Section */
+  .signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Signup Box */
+  .signup-box {
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .signup-heading {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  /* Form Styling */
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .form-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .colorful-input {
+    background: linear-gradient(90deg, #fddde6, #d1f5ff);
+  }
+  
+  /* Buttons */
+  .signup-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .signup-button:hover {
+    background-color: #0056b3;
+  }
+  
