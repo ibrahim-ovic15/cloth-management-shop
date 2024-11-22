@@ -1,0 +1,68 @@
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4); /* Vibrant background */
+  }
+  
+  /* Inventory Container */
+  .inventory-container {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  /* Heading */
+  .inventory-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Inventory Grid */
+  .inventory-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Inventory Card */
+  .inventory-card {
+    width: 200px;
+    height: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffe259, #ffa751); /* Gradient colors */
+    border: 3px solid #ff8c42;
+    padding: 10px;
+  }
+  
+  .inventory-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Inventory Icon */
+  .inventory-icon {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto 10px;
+    display: block;
+  }
+  
+  /* Inventory Title */
+  .inventory-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
