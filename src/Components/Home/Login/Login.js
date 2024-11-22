@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.css"; // Add custom CSS for styling
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -66,7 +67,7 @@ const Login = () => {
 
             {/* Signup Option */}
             <p className="signup-option">
-              Don't have an account? <a href="#">Sign up</a>
+              Don't have an account? <Link to={"/signup"}>Sign Up</Link>
             </p>
           </form>
         </div>
