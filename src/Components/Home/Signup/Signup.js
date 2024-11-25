@@ -1,11 +1,12 @@
 import React from "react";
 import "./Signup.css"; // Add custom CSS for styling
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
     <div className="signup-container">
       {/* Top Heading */}
-      <h1 className="shop-heading">Cloth Shop Name</h1>
+      <h1 className="shop-heading">Brother's Cloth Store</h1>
 
       {/* Main Signup Section */}
       <div className="signup-section">
@@ -80,9 +81,9 @@ const Signup = () => {
             </div>
 
             {/* Signup Button */}
-            <button type="submit" className="signup-button">
-              Sign Up
-            </button>
+            <div>
+            <Link to="/" className="signup-button"> Sign up </Link>
+            </div>
           </form>
         </div>
       </div>

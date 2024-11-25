@@ -16,7 +16,7 @@ function App() {
   return (
     <Router basename='/'>
       <Routes>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path = '/dashboard' element={<Dashboard/>}/>
         <Route path = '/employeepage' element={<EmployeePage/>}/>
@@ -24,6 +24,7 @@ function App() {
         <Route path = '/mencloth' element={<MenClothPage/>}/>
         <Route path = '/womencloth' element={<WomenClothPage/>}/>
         <Route path = '/customer' element={<CustomerPage/>}/>
+        <Route path = '/inventory' element={<InventoryPage/>}/>
         <Route path = '/sellhistory' element={<SellHistoryPage/>}/>
         <Route path = '/admin' element={<AdminDashboard/>}/>
         <Route path = '/admingraphical' element={<AdminDashboardGraphical/>}/>

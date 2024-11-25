@@ -1,87 +1,93 @@
-import React, { useState } from "react";
+import React from "react";
+import { Box, Tabs, Tab } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import { Pie } from "react-chartjs-2";
 import "./CustomerPage.css";
 
-const customers = [
-  {
-    id: 1,
-    name: "Alice Johnson",
-    number: "123-456-7890",
-    address: "123 Elm Street",
-    firstBuy: "2023-01-15",
-    tier: "Gold",
-    totalAmount: "$1500",
-  },
-  {
-    id: 2,
-    name: "Bob Smith",
-    number: "987-654-3210",
-    address: "456 Maple Avenue",
-    firstBuy: "2023-05-20",
-    tier: "Silver",
-    totalAmount: "$800",
-  },
-  {
-    id: 3,
-    name: "Catherine Green",
-    number: "456-789-0123",
-    address: "789 Oak Lane",
-    firstBuy: "2024-03-10",
-    tier: "Platinum",
-    totalAmount: "$2500",
-  },
-  {
-    id: 4,
-    name: "David Brown",
-    number: "321-654-0987",
-    address: "321 Pine Road",
-    firstBuy: "2022-11-05",
-    tier: "Bronze",
-    totalAmount: "$400",
-  },
+// Sample customer data
+const customerData = [
+  { id: 1, name: "John Doe", number: "123-456-7890", address: "123 Elm St", firstBuy: "2024-01-10", tier: "Gold", totalAmount: 1500 },
+  { id: 2, name: "Jane Smith", number: "987-654-3210", address: "456 Maple Ave", firstBuy: "2024-02-15", tier: "Silver", totalAmount: 800 },
+  { id: 3, name: "Emily Johnson", number: "555-123-4567", address: "789 Pine Rd", firstBuy: "2024-03-20", tier: "Bronze", totalAmount: 400 },
+  { id: 4, name: "Robert Brown", number: "222-333-4444", address: "321 Oak St", firstBuy: "2024-04-10", tier: "Gold", totalAmount: 2000 },
+];
+
+// Graphical summary data
+const tierSummary = {
+  labels: ["Gold", "Silver", "Bronze"],
+  datasets: [
+    {
+      data: [2, 1, 1], // Count of customers in each tier
+      backgroundColor: ["#FFD700", "#C0C0C0", "#CD7F32"],
+    },
+  ],
+};
+
+const revenueSummary = {
+  labels: customerData.map((customer) => customer.name),
+  datasets: [
+    {
+      label: "Total Amount Bought",
+      data: customerData.map((customer) => customer.totalAmount),
+      backgroundColor: ["#66a6ff", "#ff8a00", "#8bdeff", "#ff6347"],
+    },
+  ],
+};
+
+const columns = [
+  { field: "name", headerName: "Customer Name", flex: 1 },
+  { field: "number", headerName: "Number", flex: 1 },
+  { field: "address", headerName: "Address", flex: 1 },
+  { field: "firstBuy", headerName: "First Buy", flex: 1 },
+  { field: "tier", headerName: "Customer Tier", flex: 1 },
+  { field: "totalAmount", headerName: "Total Amount Bought", flex: 1 },
 ];
 
 const CustomerPage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [tabValue, setTabValue] = React.useState(0);
 
-  const filteredCustomers = customers.filter((customer) =>
-    customer.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
 
   return (
-    <div className="customer-page">
-      <h1 className="customer-heading">Customer Details</h1>
-      <input
-        type="text"
-        placeholder="Search Customer by Name..."
-        className="search-bar"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <table className="customer-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Number</th>
-            <th>Address</th>
-            <th>First Buy</th>
-            <th>Customer Tier</th>
-            <th>Total Amount Bought</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredCustomers.map((customer) => (
-            <tr key={customer.id}>
-              <td>{customer.name}</td>
-              <td>{customer.number}</td>
-              <td>{customer.address}</td>
-              <td>{customer.firstBuy}</td>
-              <td>{customer.tier}</td>
-              <td>{customer.totalAmount}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Box className="customer-page">
+      <h1 className="page-title">Customer Management</h1>
+      <Tabs value={tabValue} onChange={handleTabChange} centered>
+        <Tab label="Customer Data" />
+        <Tab label="Summary" />
+      </Tabs>
+
+      {tabValue === 0 && (
+        <Box className="data-grid-container">
+          <DataGrid
+            rows={customerData}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            disableSelectionOnClick
+            style={{ height: 400, width: "100%", backgroundColor: "white" }}
+          />
+        </Box>
+      )}
+
+      {tabValue === 1 && (
+        <Box className="summary-container">
+          <h2 className="summary-title">Customer Summary</h2>
+          <div className="chart-container">
+            <div className="chart">
+              <h3>Customer Tiers</h3>
+              <Pie data={tierSummary} />
+            </div>
+            <div className="chart">
+              <h3>Total Revenue per Customer</h3>
+              <Pie data={revenueSummary} />
+            </div>
+          </div>
+        </Box>
+      )}
+    </Box>
   );
 };
 

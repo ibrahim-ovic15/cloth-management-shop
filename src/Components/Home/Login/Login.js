@@ -1,75 +1,56 @@
 import React from "react";
-import "./Login.css"; // Add custom CSS for styling
-import { Link } from "react-router-dom";
+import "./Login.css"; // Link to the above CSS
 
 const Login = () => {
   return (
-    <div className="login-container">
-      {/* Top Heading */}
-      <h1 className="shop-heading">Cloth Shop Name</h1>
+    <div
+      className="login-container"
+      style={{
+        backgroundImage: 'url("/login.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Heading */}
+      <h1 className="shop-heading">Brother's Cloth Store</h1>
 
-      {/* Main Login Section */}
+      {/* Login Section */}
       <div className="login-section">
-        {/* Left Side - Shop Logo */}
+        {/* Logo */}
         <div className="logo-container">
-          <img
-            src="/path-to-your-logo.png" // Replace with the actual path to your logo
-            alt="Shop Logo"
-            className="shop-logo"
-          />
+          <img src="/logo.png" alt="Shop Logo" className="shop-logo" />
         </div>
 
-        {/* Right Side - Login Box */}
+        {/* Login Form */}
         <div className="login-box">
-          <h2 className="login-heading">Sign In</h2>
-
+          <h2 className="login-heading">Login</h2>
           <form className="login-form">
-            {/* User ID/Email */}
             <div className="form-group">
-              <label htmlFor="email">UserID or Email</label>
-              <br/>
+              <label htmlFor="username">Username</label>
               <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                className="form-input colorful-input"
-                required
+                type="text"
+                id="username"
+                className="form-input"
+                placeholder="Enter your username"
               />
             </div>
-
-            {/* Password */}
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <br/>
               <input
                 type="password"
                 id="password"
+                className="form-input"
                 placeholder="Enter your password"
-                className="form-input colorful-input"
-                required
               />
             </div>
-
-            {/* Options */}
-            <div className="options">
-              <label>
-                <input type="checkbox" /> Keep me logged in
-              </label>
-              <a href="#" className="forgot-password">
-                Forgot Password?
-              </a>
-            </div>
-
-            {/* Submit Button */}
             <button type="submit" className="login-button">
               Login
             </button>
-
-            {/* Signup Option */}
-            <p className="signup-option">
-              Don't have an account? <Link to={"/signup"}>Sign Up</Link>
-            </p>
           </form>
+          <p className="signup-option">
+            New here? <a href="/signup">Sign Up</a>
+          </p>
         </div>
       </div>
     </div>
