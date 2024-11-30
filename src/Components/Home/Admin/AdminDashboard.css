@@ -1,117 +1,151 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(120deg, #84fab0, #8fd3f4);
-  }
-  
-  .admin-dashboard {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .dashboard-heading {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #34495e;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .category-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .category-btn {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 25px;
-    background: #66a6ff;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .category-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .category-btn.active {
-    background: #ffa751;
-  }
-  
-  .admin-table {
-    width: 90%;
-    margin: 0 auto 30px;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .admin-table th, .admin-table td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-  }
-  
-  .admin-table th {
-    background: linear-gradient(135deg, #66a6ff, #89f7fe);
-    color: white;
-  }
-  
-  .admin-table tbody tr:hover {
-    background-color: #f9f9f9;
-    cursor: pointer;
-  }
-  
-  .edit-btn, .delete-btn {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .edit-btn {
-    background: #ffa751;
-  }
-  
-  .delete-btn {
-    background: #e74c3c;
-  }
-  
-  .admin-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .admin-form input {
-    padding: 10px;
-    border: 2px solid #ffa751;
-    border-radius: 25px;
-    outline: none;
-  }
-  
-  .save-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    background: #66a6ff;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .save-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
+/* General Page Styling */
+.admin-dashboard {
+  background-image: url('D:\Web Development\cloth-shop-management\public\login.jpg'); /* Replace with the path to your logo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff; /* Default font color (white for contrast on dark backgrounds) */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Overlay to darken the background and make text more readable */
+.admin-dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1; /* Ensure it's behind content */
+}
+
+/* Heading Styling */
+.dashboard-heading {
+  font-size: 36px;
+  color: #fff; /* White color to contrast against background */
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for better visibility */
+}
+
+/* Category Buttons */
+.category-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.category-btn {
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent button background */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-btn:hover, .category-btn.active {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken the button on hover */
+}
+
+/* Table Styling */
+.admin-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for table */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+  background-color: #333; /* Dark background for table header */
+  color: white;
+}
+
+.admin-table td {
+  color: #333;
+}
+
+.admin-table tr:hover {
+  background-color: #f1f1f1; /* Light hover effect for rows */
+}
+
+/* Form Styling */
+.admin-form {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent form background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.admin-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.save-btn {
+  background-color: #ff8a00; /* Orange background for save button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #e52e71; /* Pinkish hover effect */
+}
+
+/* Table Action Buttons */
+.edit-btn,
+.delete-btn {
+  background-color: #ff8a00; /* Orange button background for edit */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #e52e71; /* Hover effect for edit button */
+}
+
+.delete-btn {
+  background-color: #e52e71; /* Pinkish button background for delete */
+}
+
+.delete-btn:hover {
+  background-color: #ff8a00; /* Hover effect for delete button */
+}
+
+/* Adjust spacing between table and form */
+.dashboard-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+

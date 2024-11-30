@@ -4,12 +4,12 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Pie } from "react-chartjs-2";
 import "./CustomerPage.css";
 
-// Sample customer data
+// Sample customer data with discount percentage based on tier
 const customerData = [
-  { id: 1, name: "John Doe", number: "123-456-7890", address: "123 Elm St", firstBuy: "2024-01-10", tier: "Gold", totalAmount: 1500 },
-  { id: 2, name: "Jane Smith", number: "987-654-3210", address: "456 Maple Ave", firstBuy: "2024-02-15", tier: "Silver", totalAmount: 800 },
-  { id: 3, name: "Emily Johnson", number: "555-123-4567", address: "789 Pine Rd", firstBuy: "2024-03-20", tier: "Bronze", totalAmount: 400 },
-  { id: 4, name: "Robert Brown", number: "222-333-4444", address: "321 Oak St", firstBuy: "2024-04-10", tier: "Gold", totalAmount: 2000 },
+  { id: 1, name: "John Doe", number: "123-456-7890", address: "123 Elm St", firstBuy: "2024-01-10", tier: "Gold", totalAmount: 1500, discount: 20 },
+  { id: 2, name: "Jane Smith", number: "987-654-3210", address: "456 Maple Ave", firstBuy: "2024-02-15", tier: "Silver", totalAmount: 800, discount: 10 },
+  { id: 3, name: "Emily Johnson", number: "555-123-4567", address: "789 Pine Rd", firstBuy: "2024-03-20", tier: "Bronze", totalAmount: 400, discount: 0 },
+  { id: 4, name: "Robert Brown", number: "222-333-4444", address: "321 Oak St", firstBuy: "2024-04-10", tier: "Gold", totalAmount: 2000, discount: 20 },
 ];
 
 // Graphical summary data
@@ -34,6 +34,7 @@ const revenueSummary = {
   ],
 };
 
+// Columns for the DataGrid, including the new Discount column
 const columns = [
   { field: "name", headerName: "Customer Name", flex: 1 },
   { field: "number", headerName: "Number", flex: 1 },
@@ -41,6 +42,7 @@ const columns = [
   { field: "firstBuy", headerName: "First Buy", flex: 1 },
   { field: "tier", headerName: "Customer Tier", flex: 1 },
   { field: "totalAmount", headerName: "Total Amount Bought", flex: 1 },
+  { field: "discount", headerName: "Discount %", flex: 1 }, // New column for discount
 ];
 
 const CustomerPage = () => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.css"; // Link to the above CSS
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
       }}
     >
       {/* Heading */}
-      <h1 className="shop-heading">Brother's Cloth Store</h1>
+      <h1 className="shop-heading">Beauty Fashion</h1>
 
       {/* Login Section */}
       <div className="login-section">
@@ -44,9 +45,11 @@ const Login = () => {
                 placeholder="Enter your password"
               />
             </div>
-            <button type="submit" className="login-button">
-              Login
-            </button>
+            {/* <button type="submit" className="login-button"> */}
+            <Link to="/dashboard" className="login-button">
+               Login
+        </Link>
+            {/* </button> */}
           </form>
           <p className="signup-option">
             New here? <a href="/signup">Sign Up</a>

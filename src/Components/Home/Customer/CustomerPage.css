@@ -1,81 +1,87 @@
-/* Overall Page Styling */
-.customer-page-container {
-  padding: 20px;
-  background: linear-gradient(120deg, #ffecd2, #fcb69f);
+/* Ensure the page uses the full viewport height */
+.customer-page {
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Heading */
-.customer-heading {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #34495e;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Search Bar */
-.search-bar {
-  margin-bottom: 20px;
-  width: 100%;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Grid */
-.customer-grid-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
-}
-
-/* Cards */
-.customer-card {
-  background: linear-gradient(135deg, #f6d365, #fda085);
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.customer-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-.customer-card-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('D:\Web Development\cloth-shop-management\public\login.jpg');
+  background-size: cover; /* Ensures the background covers the full page */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white; /* White text to ensure readability */
   padding: 20px;
 }
 
-/* Card Text */
-.customer-card-title {
-  font-size: 1.5rem;
+/* Page title styling */
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #fff; /* Adjust title color for contrast */
 }
 
-.customer-card-detail {
-  font-size: 1rem;
-  margin: 5px 0;
+/* Styling for the tabs */
+.MuiTabs-root {
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent dark background for tabs */
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-/* Pagination */
-.customer-pagination {
-  margin-top: 20px;
+.MuiTab-root {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.MuiTab-root.Mui-selected {
+  background-color: #ff8a00; /* Highlight color when a tab is selected */
+}
+
+/* Styling for the DataGrid container */
+.data-grid-container {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Light background for grid */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Styling for the summary container */
+.summary-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker background for the summary */
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Summary chart styling */
+.chart-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.customer-pagination .MuiPaginationItem-root {
-  color: #34495e;
+.chart {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.2); /* Light background for charts */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.customer-pagination .Mui-selected {
-  background-color: #34495e !important;
-  color: white !important;
-  font-weight: bold;
+.summary-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Styling for the DataGrid rows */
+.MuiDataGrid-root .MuiDataGrid-row {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell {
+  color: black; /* Ensures text inside cells is readable */
 }

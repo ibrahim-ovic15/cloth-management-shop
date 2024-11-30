@@ -3,16 +3,16 @@ import "./AdminDashboard.css";
 
 const initialData = {
   employees: [
-    { id: 1, name: "Alice Johnson", role: "Manager", contact: "123-456-7890" },
-    { id: 2, name: "Bob Smith", role: "Sales Associate", contact: "987-654-3210" },
+    { id: 1, name: "Alice Johnson", phone: "123-456-7890", address: "123 Main St", joinDate: "2024-01-01", salary: 5000 },
+    { id: 2, name: "Bob Smith", phone: "987-654-3210", address: "456 Elm St", joinDate: "2024-02-15", salary: 4500 },
   ],
   suppliers: [
-    { id: 1, name: "Supplier A", contact: "123-456-7890", type: "Clothing" },
-    { id: 2, name: "Supplier B", contact: "987-654-3210", type: "Accessories" },
+    { id: 1, name: "Supplier A", phone: "123-456-7890", address: "789 Oak St", type: "Clothing" },
+    { id: 2, name: "Supplier B", phone: "987-654-3210", address: "101 Pine St", type: "Accessories" },
   ],
   customers: [
-    { id: 1, name: "John Doe", contact: "456-789-1234", tier: "Gold" },
-    { id: 2, name: "Jane Doe", contact: "789-123-4567", tier: "Silver" },
+    { id: 1, name: "John Doe", phone: "456-789-1234", address: "321 Maple St", firstBuyDate: "2024-03-01", tier: "Gold", totalAmountBuy: 5000, discount: 20 },
+    { id: 2, name: "Jane Doe", phone: "789-123-4567", address: "654 Birch St", firstBuyDate: "2024-04-10", tier: "Silver", totalAmountBuy: 3000, discount: 15 },
   ],
   inventory: [
     { id: 1, item: "Jeans", category: "Men", stock: 50 },
@@ -62,29 +62,34 @@ const AdminDashboard = () => {
   };
 
   const renderTable = () => {
+    const columns = {
+      employees: ["Name", "Phone", "Address", "Join Date", "Salary", "Actions"],
+      suppliers: ["Name", "Phone", "Address", "Type of Supplied Cloth", "Actions"],
+      customers: ["Name", "Phone", "Address", "First Buy Date", "Customer Tier", "Total Amount Buy", "Discount", "Actions"],
+      inventory: ["Item", "Category", "Stock", "Actions"],
+      sales: ["Date", "Total Sell", "Actions"],
+    };
+
     return (
       <table className="admin-table">
         <thead>
           <tr>
-            {Object.keys(data[selectedCategory][0] || {}).map((key) => (
-              <th key={key}>{key}</th>
+            {columns[selectedCategory].map((col) => (
+              <th key={col}>{col}</th>
             ))}
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {data[selectedCategory].map((item) => (
             <tr key={item.id}>
-              {Object.values(item).map((value, index) => (
-                <td key={index}>{value}</td>
-              ))}
+              {Object.keys(item).map((key) =>
+                key !== "id" && key !== "Actions" ? (
+                  <td key={key}>{item[key]}</td>
+                ) : null
+              )}
               <td>
-                <button className="edit-btn" onClick={() => handleEdit(item)}>
-                  Edit
-                </button>
-                <button className="delete-btn" onClick={() => handleDelete(item.id)}>
-                  Delete
-                </button>
+                <button className="edit-btn" onClick={() => handleEdit(item)}>Edit</button>
+                <button className="delete-btn" onClick={() => handleDelete(item.id)}>Delete</button>
               </td>
             </tr>
           ))}
@@ -94,18 +99,24 @@ const AdminDashboard = () => {
   };
 
   const renderForm = () => {
+    const formFields = {
+      employees: ["name", "phone", "address", "joinDate", "salary"],
+      suppliers: ["name", "phone", "address", "type"],
+      customers: ["name", "phone", "address", "firstBuyDate", "tier", "totalAmountBuy", "discount"],
+      inventory: ["item", "category", "stock"],
+      sales: ["date", "total"],
+    };
+
     return (
       <div className="admin-form">
-        {Object.keys(data[selectedCategory][0] || {}).map((key) => (
-          key !== "id" && (
-            <input
-              key={key}
-              type="text"
-              placeholder={`Enter ${key}`}
-              value={formData[key] || ""}
-              onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
-            />
-          )
+        {formFields[selectedCategory].map((field) => (
+          <input
+            key={field}
+            type={field === "salary" || field === "total" ? "number" : "text"}
+            placeholder={`Enter ${field.charAt(0).toUpperCase() + field.slice(1)}`}
+            value={formData[field] || ""}
+            onChange={(e) => setFormData({ ...formData, [field]: e.target.value })}
+          />
         ))}
         <button className="save-btn" onClick={handleAddOrUpdate}>
           {editingItem ? "Update" : "Add"}

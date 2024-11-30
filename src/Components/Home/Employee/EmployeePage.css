@@ -1,124 +1,89 @@
-/* Global Styling */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-}
-
-/* Employee Container */
-.employee-container {
-  text-align: center;
-  padding: 20px;
-}
-
-/* Heading */
-.employee-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #4a4e69;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Employee Grid */
-.employee-grid {
+/* Employee Page Styles */
+.login-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  background-image: url("D:\Web Development\cloth-shop-management\public\login.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Employee Card */
-.employee-card {
-  width: 180px;
-  height: 220px;
+.employee-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employee-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
   text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  border: 2px solid #ff758f;
 }
 
-.employee-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Employee Photo */
-.employee-photo {
+.search-input {
   width: 100%;
-  height: 130px;
-  object-fit: cover;
-  border-bottom: 2px solid #ff758f;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-/* Employee Name */
-.employee-name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 10px 0;
-  color: #4a4e69;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Employee Details */
-.employee-details {
-  text-align: left;
-  max-width: 500px;
-  margin: 20px auto;
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  color: #34495e;
-  font-size: 1.1rem;
-  position: relative;
-}
-
-.employee-detail-photo {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
+.employee-list {
   margin-bottom: 20px;
 }
 
+.employee-name {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.employee-name:hover {
+  background-color: #e0e0e0;
+}
+
+.employee-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .employee-detail-name {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #2c3e50;
   margin-bottom: 15px;
 }
 
 .employee-details p {
-  margin: 10px 0;
-  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
 }
 
-.employee-details p strong {
-  color: #2980b9;
-}
-
-/* Back Button */
 .back-button {
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  padding: 10px 15px;
-  font-size: 0.9rem;
-  color: #fff;
-  background-color: #e74c3c;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
   border: none;
-  border-radius: 50%;
+  border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .back-button:hover {
-  background-color: #c0392b;
-  transform: scale(1.1);
+  background-color: #0056b3;
 }
+
