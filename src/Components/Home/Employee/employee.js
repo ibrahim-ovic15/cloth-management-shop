@@ -75,12 +75,14 @@ const EmployeePage = () => {
         ) : (
           <div className="employee-details">
             <button
-              className="back-button"
-              onClick={handleBackToList}
-              aria-label="Back to Employee List"
-            >
-              Back to List
-            </button>
+  type="button"
+  className="btn btn-success"
+  onClick={handleBackToList}
+  aria-label="Back to Employee List"
+>
+ Back to list
+</button>
+
             <h2 className="employee-detail-name">{selectedEmployee.name}</h2>
             <p>
               <strong>Phone Number:</strong> {selectedEmployee.number}
